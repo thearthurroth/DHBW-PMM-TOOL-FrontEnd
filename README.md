@@ -1,3 +1,6 @@
+# DHBW-PMM-TOOL-FrontEnd
+Frontend for software engineering project "Projektmanagement-Tool" / Written in ReactJS 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

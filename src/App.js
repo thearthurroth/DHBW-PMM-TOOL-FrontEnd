@@ -2,13 +2,21 @@ import './component/App.css';
 import Login from "./component/Login";
 import {Component} from "react";
 
-class App extends Component {
-  render() {
+function App() {
+
+    function onClick() {
     return (
-        <div className="App">
-          <Login />
+        console.log("Funk")
+    )
+    }
+
+    return (
+        <div >
+            <div className="App" >
+                <Login />
+            </div>
+            <button onClick={onClick}>Click me</button>
         </div>
-    );
+    )
   }
-}
-export default App;
+export default App

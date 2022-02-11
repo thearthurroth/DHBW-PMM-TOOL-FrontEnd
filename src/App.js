@@ -1,22 +1,17 @@
-import './component/App.css';
+import './App.css';
 import Login from "./component/Login";
-import {Component} from "react";
+import ManualButton from './component/ManualButton';
 
 function App() {
 
-    function onClick() {
     return (
-        console.log("Funk")
-    )
-    }
-
-    return (
-        <div >
-            <div className="App" >
+            <div className='App'>
                 <Login />
+                <div className='ManualButton'>
+                <ManualButton/>
+                </div>
             </div>
-            <button onClick={onClick}>Click me</button>
-        </div>
+
     )
   }
 export default App

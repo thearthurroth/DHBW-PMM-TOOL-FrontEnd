@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './App.css';
+import './Login.css';
 
 function Login() {
     // React States
@@ -22,6 +22,7 @@ function Login() {
         uname: "invalid username",
         pass: "invalid password"
     };
+
 
     const handleSubmit = (event) => {
         //Prevent page reload
@@ -57,13 +58,11 @@ function Login() {
         <div className="form">
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
-                    <label>Username </label>
-                    <input type="text" name="uname" required />
+                    <input placeholder="Username" type="text" name="uname" required />
                     {renderErrorMessage("uname")}
                 </div>
                 <div className="input-container">
-                    <label>Password </label>
-                    <input type="password" name="pass" required />
+                    <input placeholder="Password" type="password" name="pass" required />
                     {renderErrorMessage("pass")}
                 </div>
                 <div className="button-container">
@@ -75,7 +74,8 @@ function Login() {
 
     return (
         <div className="login-form">
-            <div className="title">Sign In</div>
+            <div className="title">Sign In
+            </div>
             {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
         </div>
     );

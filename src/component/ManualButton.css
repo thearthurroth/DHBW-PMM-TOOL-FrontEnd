@@ -13,10 +13,4 @@ button{
     -webkit-appearance: none;
     -moz-appearance: none;
     border-radius: 1ch;
-
-    -webkit-transform: rotate(270deg);
-    -moz-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    transform: rotate(270deg);
 }

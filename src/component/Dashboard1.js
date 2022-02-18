@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 
 function Dashboard1(props) {
   return (
@@ -20,24 +20,26 @@ function Dashboard1(props) {
           <RecentProjects>Recent projects</RecentProjects>
           <Rect16></Rect16>
           <Rect9Row>
-            <Rect9>
-              <CreateProject>Create project</CreateProject>
-            </Rect9>
-            <Rect10>
-              <ManageProjects>Manage projects</ManageProjects>
-            </Rect10>
+              <CreateProject>
+                <button>Create project</button>
+              </CreateProject>
+
+              <ManageProjects>
+                <button>Manage projects</button>
+              </ManageProjects>
           </Rect9Row>
         </Rect2>
         <Rect6>
           <Rect17Row>
             <Rect17></Rect17>
             <Rect12Column>
-              <Rect12>
-                <CreateEmployee>Create employee</CreateEmployee>
-              </Rect12>
-              <Rect11>
-                <ManageEmployees>Manage employees</ManageEmployees>
-              </Rect11>
+                <CreateEmployee>
+                    <button>Create employee</button>
+                </CreateEmployee>
+
+                <ManageEmployees>
+                  <button>Manage employees</button>
+                </ManageEmployees>
             </Rect12Column>
           </Rect17Row>
         </Rect6>
@@ -47,19 +49,20 @@ function Dashboard1(props) {
           <Rect18Row>
             <Rect18></Rect18>
             <Rect14Column>
-              <Rect14>
-                <CreateTeam>Create Team</CreateTeam>
-              </Rect14>
-              <Rect13>
-                <ManageTeams>Manage Teams</ManageTeams>
-              </Rect13>
+                <CreateTeam>
+                  <button>Create Team</button>
+                </CreateTeam>
+
+                <ManageTeams>
+                  <button>Manage Teams</button>
+                </ManageTeams>
             </Rect14Column>
           </Rect18Row>
         </Rect7>
         <Rect8>
-          <Rect15>
-            <CreateWorkPackage>Create work package</CreateWorkPackage>
-          </Rect15>
+            <CreateWorkPackage>
+              <button>Create work package</button>
+            </CreateWorkPackage>
         </Rect8>
       </Rect7Row>
     </Container>

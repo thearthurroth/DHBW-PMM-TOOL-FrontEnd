@@ -47,7 +47,7 @@ function Dashboard1(props) {
       <Rect7Row>
         <Rect7>
           <Rect18Row>
-            <Rect18></Rect18>
+          <Rect18></Rect18>
             <Rect14Column>
                 <CreateTeam>
                   <button>Create Team</button>
@@ -167,11 +167,11 @@ const RecentProjects = styled.span`
   font-size: 30px;
   text-align: center;
   margin-top: 23px;
-  margin-left: 204px;
+  margin-left: 0px;
 `;
 
 const Rect16 = styled.div`
-  width: 499px;
+  width: 410px;
   height: 129px;
   background-color: rgba(38,38,38,1);
   border-radius: 14px;
@@ -196,8 +196,8 @@ const CreateProject = styled.span`
   height: 37px;
   width: 197px;
   font-size: 30px;
-  margin-top: 27px;
-  margin-left: 12px;
+  margin-top: 24px;
+  margin-left: 5px;
 `;
 
 const Rect10 = styled.div`
@@ -219,8 +219,8 @@ const ManageProjects = styled.span`
   width: 197px;
   font-size: 30px;
   text-align: center;
-  margin-top: 8px;
-  margin-left: 13px;
+  margin-top: 24px;
+  margin-left: 15px;
 `;
 
 const Rect9Row = styled.div`
@@ -267,7 +267,7 @@ const CreateEmployee = styled.span`
   width: 197px;
   font-size: 30px;
   text-align: center;
-  margin-top: 8px;
+  margin-top: 0px;
   margin-left: 12px;
 `;
 
@@ -287,10 +287,10 @@ const ManageEmployees = styled.span`
   font-weight: 400;
   color: rgba(255,255,255,1);
   height: 37px;
-  width: 197px;
+  width: 190px;
   font-size: 30px;
   text-align: center;
-  margin-top: 8px;
+  margin-top: 115px;
   margin-left: 12px;
 `;
 
@@ -353,7 +353,7 @@ const CreateTeam = styled.span`
   width: 197px;
   font-size: 30px;
   text-align: center;
-  margin-top: 27px;
+  margin-top: 0px;
   margin-left: 12px;
 `;
 
@@ -376,7 +376,7 @@ const ManageTeams = styled.span`
   width: 197px;
   font-size: 30px;
   text-align: center;
-  margin-top: 12px;
+  margin-top: 135px;
   margin-left: 12px;
 `;
 
@@ -426,8 +426,8 @@ const CreateWorkPackage = styled.span`
   width: 197px;
   font-size: 30px;
   text-align: center;
-  margin-top: 8px;
-  margin-left: 12px;
+  margin-top: 50px;
+  margin-left: 50px;
 `;
 
 const Rect7Row = styled.div`

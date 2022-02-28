@@ -71,3 +71,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+To run the chart which depicts the workload of employees and with that the whole application, some MUI packages are required.
+
+They can be installed by using:
+### `npm i @devexpress/dx-react-chart-material-ui`

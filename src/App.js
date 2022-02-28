@@ -10,6 +10,9 @@ import AllEmployees from "./component/AllEmployees";
 import AllUsers from "./component/AllUsers";
 import CreateEmployee from "./component/CreateEmployee";
 import WorkloadChart from "./component/WorkloadChart";
+import EditTeam from "./component/EditTeam";
+import AllProjects from "./component/AllProjects";
+import EditProject from "./component/EditProject";
 /*
 <Login />
 <div className='ManualButton'>
@@ -21,7 +24,7 @@ function App() {
 
     return (
             <div className='App'>
-                <WorkloadChart />
+                <EditProject/>
             </div>
 
     )

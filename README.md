@@ -76,4 +76,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 To run the chart which depicts the workload of employees and with that the whole application, some MUI packages are required.
 
 They can be installed by using:
-### `npm i @devexpress/dx-react-chart-material-ui`
+
+###  'npm install -r @devexpress/dx-core @devexpress/dx-react-core @devexpress/dx-react-chart-material-ui @devexpress/dx-react-chart @material-ui/core @mui/material @emotion/react @emotion/styled @mui/material @mui/styled-engine-sc styled-components'

@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
+import { useParams, useNavigate } from "react-router-dom";
 
 function AllProjects(props) {
+  let { userId } = useParams()
+  const navigate = useNavigate()
   return (
     <Container>
       <Rect1>
-        <Button1>
+        <Button1 onClick={() =>{
+            let link= '/';
+            navigate(link)}}>
           <ButtonOverlay>
             <Logout1>Logout</Logout1>
           </ButtonOverlay>
@@ -13,7 +18,7 @@ function AllProjects(props) {
       </Rect1>
       <Rect2>
         <ProjectsRow>
-          <Projects>Projects</Projects>
+          <Projects>Projects of + {userId}</Projects>
           <Search1 placeholder="    Search"></Search1>
         </ProjectsRow>
         <Rect4Stack>

@@ -1,14 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { useParams, useNavigate } from "react-router-dom";
 
 function Dashboard1(props) {
+  let { userId } = useParams()
+  const navigate = useNavigate()
   return (
     <Container>
       <Rect>
         <Image1Row>
           <Image1 src={require("../grid-globe-png.png")}></Image1>
-          <Welcome>Welcome!</Welcome>
-          <Button>
+          <Welcome>Welcome, {userId} !</Welcome>
+          <Button onClick={() =>{
+            let link= '/';
+            navigate(link)}}>
             <ButtonOverlay>
               <Logout>Logout</Logout>
             </ButtonOverlay>
@@ -25,7 +30,9 @@ function Dashboard1(props) {
               </CreateProject>
 
               <ManageProjects>
-                <button>Manage projects</button>
+                <button onClick={() =>{
+            let link= '/dashboard/projects/'+ userId;
+            navigate(link)}}>Manage projects</button>
               </ManageProjects>
           </Rect9Row>
         </Rect2>
@@ -34,11 +41,15 @@ function Dashboard1(props) {
             <Rect17></Rect17>
             <Rect12Column>
                 <CreateEmployee>
-                    <button>Create employee</button>
+                    <button onClick={() =>{
+            let link= '/dashboard/mitarbeiter/erstellen/'+ userId;
+            navigate(link)}}>Create employee</button>
                 </CreateEmployee>
 
                 <ManageEmployees>
-                  <button>Manage employees</button>
+                  <button onClick={() =>{
+            let link= '/dashboard/mitarbeiter/'+ userId;
+            navigate(link)}}>Manage employees</button>
                 </ManageEmployees>
             </Rect12Column>
           </Rect17Row>
@@ -50,11 +61,15 @@ function Dashboard1(props) {
           <Rect18></Rect18>
             <Rect14Column>
                 <CreateTeam>
-                  <button>Create Team</button>
+                  <button onClick={() =>{
+            let link= '/dashboard/teams/erstellen/'+ userId;
+            navigate(link)}}>Create Team</button>
                 </CreateTeam>
 
                 <ManageTeams>
-                  <button>Manage Teams</button>
+                  <button onClick={() =>{
+            let link= '/dashboard/teams/'+ userId;
+            navigate(link)}}>Manage Teams</button>
                 </ManageTeams>
             </Rect14Column>
           </Rect18Row>

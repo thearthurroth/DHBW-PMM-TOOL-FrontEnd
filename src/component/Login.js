@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './Login.css';
+import {useNavigate} from "react-router-dom"
+import App from "../App";
 
 function Login() {
     // React States
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const navigate = useNavigate()
+
+   function returnSubmit() {
+       return isSubmitted
+   };
+
 
     // User Login info
     const database = [
@@ -13,7 +21,7 @@ function Login() {
             password: "pass1"
         },
         {
-            username: "user2",
+            username: "admin2",
             password: "pass2"
         }
     ];
@@ -40,11 +48,23 @@ function Login() {
                 setErrorMessages({ name: "pass", message: errors.pass });
             } else {
                 setIsSubmitted(true);
+                if (uname.value == "user1"){
+                let link = "/dashboard/overview/"+uname.value
+                navigate(link)} else if(uname.value == "admin2") {
+                    let link = "/admin/dashboard/"+uname.value
+                    navigate(link)
+                }
+                
+                
             }
         } else {
             // Username not found
             setErrorMessages({ name: "uname", message: errors.uname });
         }
+
+
+        
+            
     };
 
     // Generate JSX code for error message
@@ -58,11 +78,13 @@ function Login() {
         <div className="form">
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
-                    <input placeholder="Username" type="text" name="uname" required />
+                    <label>Username </label>
+                    <input type="text" name="uname" required />
                     {renderErrorMessage("uname")}
                 </div>
                 <div className="input-container">
-                    <input placeholder="Password" type="password" name="pass" required />
+                    <label>Password </label>
+                    <input type="password" name="pass" required />
                     {renderErrorMessage("pass")}
                 </div>
                 <div className="button-container">
@@ -74,9 +96,9 @@ function Login() {
 
     return (
         <div className="login-form">
-            <div className="title">Sign In
-            </div>
-            {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+            <div className="title">Sign In</div>
+            {isSubmitted ? <div>User is successfully logged in</div>   : renderForm}
+
         </div>
     );
 }

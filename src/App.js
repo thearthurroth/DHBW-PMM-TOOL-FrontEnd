@@ -14,6 +14,8 @@ import CreateTeam from './component/CreateTeam';
 import AllUsers from './component/AllUsers';
 import Projektansicht from './component/Projektansicht';
 import EditTeam from './component/EditTeam'
+import EditProject from './component/EditProject';
+import EditEmployees from './component/EditEmployees';
 
 function App() {
   const [isLogged, setIsLogged] = useState(true);
@@ -22,7 +24,7 @@ function App() {
     <div className='App'>
 
     <Routes>
-      <Route path='/' element={<EditTeam/>}/>
+      <Route path='/' element={<CreateEmployee/>}/>
       <Route element={<PrivateRoute isLogged={isLogged}/>}>
         <Route path='/dashboard/overview/:userId' element={<Dashboard1/>}/>
         <Route path='/dashboard/projects/:userId' element={<AllProjects/>}/>

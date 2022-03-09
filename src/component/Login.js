@@ -14,7 +14,7 @@ function Login() {
    };
 
 
-    // User Login info
+    // Login Credentials, in finaler Version aus Datenbank stammend
     const database = [
         {
             username: "user1",
@@ -33,24 +33,24 @@ function Login() {
 
 
     const handleSubmit = (event) => {
-        //Prevent page reload
+        //Verhindere Page rel
         event.preventDefault();
 
         var { uname, pass } = document.forms[0];
 
-        // Find user login info
+        // User credentials beschaffen
         const userData = database.find((user) => user.username === uname.value);
 
-        // Compare user info
+        // Abgleichen der Nutzerdaten
         if (userData) {
             if (userData.password !== pass.value) {
-                // Invalid password
+                // Ungültiges Passwort
                 setErrorMessages({ name: "pass", message: errors.pass });
             } else {
                 setIsSubmitted(true);
-                if (uname.value == "user1"){
+                if (uname.value === "user1"){
                 let link = "/dashboard/overview/"+uname.value
-                navigate(link)} else if(uname.value == "admin2") {
+                navigate(link)} else if(uname.value === "admin2") {
                     let link = "/admin/dashboard/"+uname.value
                     navigate(link)
                 }
@@ -58,7 +58,7 @@ function Login() {
                 
             }
         } else {
-            // Username not found
+            // Benutzername nicht gefunden
             setErrorMessages({ name: "uname", message: errors.uname });
         }
 
@@ -73,7 +73,7 @@ function Login() {
             <div className="error">{errorMessages.message}</div>
         );
 
-    // JSX code for login form
+    // JSX Code für Anmeldemaske
     const renderForm = (
         <div className="form">
             <form onSubmit={handleSubmit}>

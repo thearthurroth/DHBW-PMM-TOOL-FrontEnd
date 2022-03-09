@@ -9,6 +9,8 @@ import {
 } from '@devexpress/dx-react-chart-material-ui';
 import { Animation } from '@devexpress/dx-react-chart';
 
+
+// Daten über Auslastung (werden in Verknüpftem Fron- und Backend über die API übergeben)
 const data = [
   { calendarweek: '1', percentage: 0.235 },
   { calendarweek: '2', percentage: 0.132 },
@@ -19,6 +21,7 @@ const data = [
   { calendarweek: '7', percentage: 1.346 },
 ];
 
+// Klasse WorkloadChart, verantwortlich für das Erstellen der Tabelle mit den Workloads der Mitarbeiter ist
 export default class WorkloadChart extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -28,6 +31,7 @@ export default class WorkloadChart extends React.PureComponent {
     };
   }
 
+  // Rendern der Tabelle anhand der übergebenen Daten
   render() {
     const { data: chartData } = this.state;
 
@@ -39,6 +43,7 @@ export default class WorkloadChart extends React.PureComponent {
           <ArgumentAxis />
           <ValueAxis max={7} />
 
+          {/* Übergabe der Parameter, die zuvor in den Variablen definiert wurden */}
           <BarSeries
             valueField="percentage"
             argumentField="calendarweek"

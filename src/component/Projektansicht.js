@@ -2,236 +2,139 @@ import React, { Component } from "react";
 import styled, { css } from "styled-components";
 
 function Projektansicht(props) {
+  // Variablen, die für die Inhalte der Seite verantwortlich sind
+  // Bei Verknüpftem Backend werden die Inhalte durch API Aufrufe gegeben
+  const titleText = "Project title";
+  const bodyText = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diamnonumy eirmod tempor invidunt ut labore et dolore magna aliquyamerat, sed diam voluptua. At vero eos et accusam et justo duo doloreset ea rebum. Stet clita kasd gubergren, no sea takimata sanctus estLorem ipsum dolor sit amet.";
+
+  const Workpackage1name = "Documentation";
+  const Workpackage1start = "09.03.2022";
+  const Workpackage1end = "09.05.2022";
+  const Workpackage1description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seddiam nonumy eirmod tempor invidunt ut labore et dolore magnaaliquyam erat, sed diam voluptua. At vero eos et accusam etjusto duo dolores et ea rebum. Stet clita kasd gubergren, nosea takimata sanctus est Lorem ipsum dolor sit amet.";
+
+  const Workpackage2name = "Implementation";
+  const Workpackage2start = "15.04.2022";
+  const Workpackage2end = "03.07.2022";
+  const Workpackage2description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seddiam nonumy eirmod tempor invidunt ut labore et dolore magnaaliquyam erat, sed diam voluptua. At vero eos et accusam etjusto duo dolores et ea rebum. Stet clita kasd guberg.";
+
+  const Workpackage3name = "Verifikation";
+  const Workpackage3start = "08.07.2022";
+  const Workpackage3end = "05.10.2022";
+  const Workpackage3description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, guberg.";
+
   return (
     <Container>
       <Image1StackStack>
-        <Image1Stack>
-          <Rect1>
-            <Image2Row>
-              <Button1>
-                <ButtonOverlay>
-                  <Logout1>Logout</Logout1>
-                </ButtonOverlay>
-              </Button1>
-            </Image2Row>
-          </Rect1>
-        </Image1Stack>
       </Image1StackStack>
       <ProjectNameColumnRow>
+
+        {/* Block Titel und Projektbeschreibung */}
         <ProjectNameColumn>
-          <ProjectName>Project name</ProjectName>
-          <LoremIpsum>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet.
-          </LoremIpsum>
-          <Rect2>
-            <ProjectMembers2>Project members</ProjectMembers2>
-            <Rect3></Rect3>
-          </Rect2>
+          <ProjectName>{titleText}</ProjectName>
+          <ProjectDescription>{bodyText}</ProjectDescription>
+
+          {/* Tabelle für Projektmitglieder */}
+          <ProjectmembersArea>
+            <ProjectMembers>Project members</ProjectMembers>
+            <ProjectMembersTable></ProjectMembersTable>
+          </ProjectmembersArea>
         </ProjectNameColumn>
-        <Rect4>
-          <ProjectMembers1>Project members</ProjectMembers1>
+
+        {/* Scrollable View über die Arbeitspakete */}
+        <WorkPackagesArea>
+          <WorkPackages>Workpackages</WorkPackages>
           <ScrollAreaStack>
             <ScrollArea>
-              <Rect6>
-                <Rect5ColumnRow>
-                  <Rect5Column>
-                    <Rect5>
-                      <WorkPackage1>Work package 1</WorkPackage1>
-                    </Rect5>
-                    <Start>
+              
+              <Scrollelement1Area>
+                <Scrollelement1Left>
+                  <Scrollelement1Right>
+                    <Scrollelement1TitleArea>
+                      {/* Beschreibung eines Arbeitspaketes (äquivalent bei den anderen) */}
+                      <Scrollelement1Title>{Workpackage1name}</Scrollelement1Title>
+                    </Scrollelement1TitleArea>
+                    <Scrollelement1Date>
+                      {/* Start und Enddaten des Arbeispaketes */}
+                      Start Date: 
+                      {Workpackage1start}
+                      <br />
+                      <br />
+                      End Date: 
+                      {Workpackage1end}
+                    </Scrollelement1Date>
+                  </Scrollelement1Right>
+                  <Scrollelement1Description>
+                  {Workpackage1description}
+                  </Scrollelement1Description>
+                </Scrollelement1Left>
+              </Scrollelement1Area>
+                
+                {/* Beschreibung eines Arbeitspaketes (äquivalent bei den anderen) */}
+              <Scrollelement2Area>
+                <Scrollelement2Left>
+                  <Scrollelement2Right>
+                    <Scrollelement2TitleArea>
+                      <Scrollelement2TitleRectangle></Scrollelement2TitleRectangle>
+                      <Scrollelement2Title>{Workpackage2name}</Scrollelement2Title>
+                    </Scrollelement2TitleArea>
+                    <Scrollelement2Date>
+                      {/* Start und Enddaten des Arbeispaketes */}
                       Start Date:
+                      {Workpackage2start}
                       <br />
                       <br />
                       End Date:
-                    </Start>
-                  </Rect5Column>
-                  <LoremIpsum2>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                    justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-                    sea takimata sanctus est Lorem ipsum dolor sit amet. 
-                  </LoremIpsum2>
-                </Rect5ColumnRow>
-              </Rect6>
-              <Rect7>
-                <WorkPackage2StackColumnRow>
-                  <WorkPackage2StackColumn>
-                    <WorkPackage2Stack>
-                      <WorkPackage2>Work package 1</WorkPackage2>
-                      <Rect8></Rect8>
-                      <WorkPackage22>Work package 2</WorkPackage22>
-                    </WorkPackage2Stack>
-                    <Start1>
-                      Start Date:
-                      <br />
-                      <br />
-                      End Date:
-                    </Start1>
-                  </WorkPackage2StackColumn>
-                  <LoremIpsum3>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                    justo duo dolores et ea rebum. 
-                  </LoremIpsum3>
-                </WorkPackage2StackColumnRow>
-              </Rect7>
-              <WorkPackage23Stack>
-                <WorkPackage23>Work package 2</WorkPackage23>
-                <Rect9></Rect9>
-                <Rect10>
-                  <Rect11StackColumnRow>
-                    <Rect11StackColumn>
-                      <Rect11Stack>
-                        <Rect11></Rect11>
-                        <WorkPackage3>Work package 3</WorkPackage3>
-                      </Rect11Stack>
-                      <Start2>
-                        Start Date: 
+                      {Workpackage2end}
+                    </Scrollelement2Date>
+                  </Scrollelement2Right>
+                  <Scrollelement2Description>
+                    {Workpackage2description}
+                  </Scrollelement2Description>
+                </Scrollelement2Left>
+              </Scrollelement2Area>
+              
+              {/* Beschreibung eines Arbeitspaketes (äquivalent bei den anderen) */} 
+              <Scrollelement3Area>             
+                <Scrollableelement3Rectangle>
+                  <Scrollableelement3Left>
+                    <Scrollableelement3Right>
+                      <Scrollableelement3TitleArea>
+                        <Scrollableelement3TitleRectangle></Scrollableelement3TitleRectangle>
+                        <Scrollableelement3Title>{Workpackage3name}</Scrollableelement3Title>
+                      </Scrollableelement3TitleArea>
+                      <Scrollableelement3Date>
+                        {/* Start und Enddaten des Arbeispaketes */}
+                        Start Date:
+                        {Workpackage3start}
                         <br />
                         <br />
                         End Date:
-                      </Start2>
-                    </Rect11StackColumn>
-                    <LoremIpsum4>
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                      magna aliquyam erat, sed diam voluptua.
-                    </LoremIpsum4>
-                  </Rect11StackColumnRow>
-                </Rect10>
-              </WorkPackage23Stack>
+                        {Workpackage3end}
+                      </Scrollableelement3Date>
+                    </Scrollableelement3Right>
+                    <Scrollableelement3Description>
+                    {Workpackage3description}
+                    </Scrollableelement3Description>
+                  </Scrollableelement3Left>
+                </Scrollableelement3Rectangle>
+              
+              </Scrollelement3Area>
             </ScrollArea>
             <Vertical></Vertical>
           </ScrollAreaStack>
-        </Rect4>
+        </WorkPackagesArea>
       </ProjectNameColumnRow>
-      <GanttStack>
-        <Gantt></Gantt>
-        <GanttChart>GANTT Chart</GanttChart>
-      </GanttStack>
     </Container>
   );
 }
 
+// Ab hier folgen die Styles der jeweiligen Komponenten
 const Container = styled.div`
   display: flex;
   background-color: rgba(38,38,38,1);
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-`;
-
-const ButtonOverlay = styled.button`
- display: block;
- background: none;
- height: 100%;
- width: 100%;
- border:none
- `;
-const Image1 = styled.img`
-  left: 22px;
-  width: 65px;
-  height: 94px;
-  position: absolute;
-  transform: rotate(-38.00deg);
-  opacity: 0.68;
-  top: 4px;
-  object-fit: contain;
-`;
-
-const Rect1 = styled.div`
-  top: 0px;
-  height: 98px;
-  position: absolute;
-  background-color: rgba(1,210,142,1);
-  left: 0px;
-  right: 0px;
-  flex-direction: row;
-  display: flex;
-`;
-
-const Image2 = styled.img`
-  width: 100%;
-  height: 94px;
-  transform: rotate(-38.00deg);
-  opacity: 0.68;
-  object-fit: contain;
-`;
-
-const Welcome2 = styled.span`
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: 400;
-  color: #121212;
-  height: 17px;
-  width: 128px;
-  text-align: center;
-  font-size: 25px;
-  margin-left: 11px;
-  margin-top: 34px;
-`;
-
-const Button1 = styled.div`
-  width: 207px;
-  height: 70px;
-  background-color: rgba(255,254,254,0.42);
-  border-radius: 14px;
-  flex-direction: column;
-  display: flex;
-  margin-left: 1469px;
-  margin-top: 12px;
-  border: none;
-`;
-
-const Logout1 = styled.span`
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: 400;
-  color: rgba(255,255,255,1);
-  height: 37px;
-  width: 197px;
-  font-size: 30px;
-  text-align: center;
-  margin-top: 17px;
-  margin-left: 5px;
-`;
-
-const Image2Row = styled.div`
-  height: 94px;
-  flex-direction: row;
-  display: flex;
-  flex: 1 1 0%;
-  margin-right: 18px;
-  margin-left: 22px;
-  margin-top: 4px;
-`;
-
-const Image1Stack = styled.div`
-  top: 0px;
-  left: 0px;
-  height: 98px;
-  position: absolute;
-  right: 0px;
-`;
-
-const Welcome1 = styled.span`
-  font-family: Ubuntu;
-  top: 38px;
-  left: 98px;
-  position: absolute;
-  font-style: normal;
-  font-weight: 400;
-  color: #121212;
-  height: 17px;
-  width: 128px;
-  text-align: center;
-  font-size: 25px;
 `;
 
 const Image1StackStack = styled.div`
@@ -249,7 +152,7 @@ const ProjectName = styled.span`
   font-size: 40px;
 `;
 
-const LoremIpsum = styled.span`
+const ProjectDescription = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -260,7 +163,7 @@ const LoremIpsum = styled.span`
   margin-top: 24px;
 `;
 
-const Rect2 = styled.div`
+const ProjectmembersArea = styled.div`
   width: 623px;
   height: 340px;
   background-color: rgba(74,74,74,1);
@@ -270,7 +173,7 @@ const Rect2 = styled.div`
   margin-top: 30px;
 `;
 
-const ProjectMembers2 = styled.span`
+const ProjectMembers = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -278,10 +181,10 @@ const ProjectMembers2 = styled.span`
   font-size: 30px;
   text-align: center;
   margin-top: 23px;
-  margin-left: 205px;
+  margin-left: 0px;
 `;
 
-const Rect3 = styled.div`
+const ProjectMembersTable = styled.div`
   width: 499px;
   height: 212px;
   background-color: rgba(38,38,38,1);
@@ -296,7 +199,7 @@ const ProjectNameColumn = styled.div`
   display: flex;
 `;
 
-const Rect4 = styled.div`
+const WorkPackagesArea = styled.div`
   width: 820px;
   height: 621px;
   background-color: rgba(74,74,74,1);
@@ -306,7 +209,7 @@ const Rect4 = styled.div`
   margin-left: 139px;
 `;
 
-const ProjectMembers1 = styled.span`
+const WorkPackages = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -314,7 +217,7 @@ const ProjectMembers1 = styled.span`
   font-size: 30px;
   text-align: center;
   margin-top: 19px;
-  margin-left: 293px;
+  margin-left: 0px;
 `;
 
 const ScrollArea = styled.div`
@@ -330,7 +233,7 @@ const ScrollArea = styled.div`
   display: flex;
 `;
 
-const Rect6 = styled.div`
+const Scrollelement1Area = styled.div`
   width: 623px;
   height: 260px;
   background-color: rgba(74,74,74,1);
@@ -342,7 +245,7 @@ const Rect6 = styled.div`
   flex: 0 0 auto;
 `;
 
-const Rect5 = styled.div`
+const Scrollelement1TitleArea = styled.div`
   width: 256px;
   height: 102px;
   background-color: rgba(124,124,124,1);
@@ -351,7 +254,7 @@ const Rect5 = styled.div`
   display: flex;
 `;
 
-const WorkPackage1 = styled.span`
+const Scrollelement1Title = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -364,7 +267,7 @@ const WorkPackage1 = styled.span`
   margin-left: 17px;
 `;
 
-const Start = styled.span`
+const Scrollelement1Date = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -375,14 +278,14 @@ const Start = styled.span`
   margin-left: 17px;
 `;
 
-const Rect5Column = styled.div`
+const Scrollelement1Right = styled.div`
   width: 256px;
   flex-direction: column;
   display: flex;
   margin-bottom: 14px;
 `;
 
-const LoremIpsum2 = styled.span`
+const Scrollelement1Description = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -392,7 +295,7 @@ const LoremIpsum2 = styled.span`
   margin-left: 24px;
 `;
 
-const Rect5ColumnRow = styled.div`
+const Scrollelement1Left = styled.div`
   height: 216px;
   flex-direction: row;
   display: flex;
@@ -401,7 +304,7 @@ const Rect5ColumnRow = styled.div`
   margin-right: 21px;
 `;
 
-const Rect7 = styled.div`
+const Scrollelement2Area = styled.div`
   width: 623px;
   height: 260px;
   background-color: rgba(74,74,74,1);
@@ -413,21 +316,8 @@ const Rect7 = styled.div`
   flex: 0 0 auto;
 `;
 
-const WorkPackage2 = styled.span`
-  font-family: Ubuntu;
-  top: 36px;
-  left: 17px;
-  position: absolute;
-  font-style: normal;
-  font-weight: 400;
-  color: rgba(255,255,255,1);
-  height: 66px;
-  width: 223px;
-  font-size: 25px;
-  text-align: center;
-`;
 
-const Rect8 = styled.div`
+const Scrollelement2TitleRectangle = styled.div`
   top: 0px;
   left: 0px;
   width: 256px;
@@ -437,7 +327,7 @@ const Rect8 = styled.div`
   border-radius: 14px;
 `;
 
-const WorkPackage22 = styled.span`
+const Scrollelement2Title = styled.span`
   font-family: Ubuntu;
   top: 37px;
   left: 17px;
@@ -451,13 +341,13 @@ const WorkPackage22 = styled.span`
   text-align: center;
 `;
 
-const WorkPackage2Stack = styled.div`
+const Scrollelement2TitleArea = styled.div`
   width: 256px;
   height: 103px;
   position: relative;
 `;
 
-const Start1 = styled.span`
+const Scrollelement2Date = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -468,14 +358,14 @@ const Start1 = styled.span`
   margin-left: 17px;
 `;
 
-const WorkPackage2StackColumn = styled.div`
+const Scrollelement2Right = styled.div`
   width: 256px;
   flex-direction: column;
   display: flex;
   margin-bottom: 14px;
 `;
 
-const LoremIpsum3 = styled.span`
+const Scrollelement2Description = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -485,7 +375,7 @@ const LoremIpsum3 = styled.span`
   margin-left: 24px;
 `;
 
-const WorkPackage2StackColumnRow = styled.div`
+const Scrollelement2Left = styled.div`
   height: 216px;
   flex-direction: row;
   display: flex;
@@ -494,31 +384,8 @@ const WorkPackage2StackColumnRow = styled.div`
   margin-right: 21px;
 `;
 
-const WorkPackage23 = styled.span`
-  font-family: Ubuntu;
-  top: 65px;
-  left: 48px;
-  position: absolute;
-  font-style: normal;
-  font-weight: 400;
-  color: rgba(255,255,255,1);
-  height: 66px;
-  width: 223px;
-  font-size: 25px;
-  text-align: center;
-`;
 
-const Rect9 = styled.div`
-  top: 28px;
-  left: 31px;
-  width: 256px;
-  height: 102px;
-  position: absolute;
-  background-color: rgba(124,124,124,1);
-  border-radius: 14px;
-`;
-
-const Rect10 = styled.div`
+const Scrollableelement3Rectangle = styled.div`
   top: 0px;
   left: 0px;
   width: 623px;
@@ -530,7 +397,7 @@ const Rect10 = styled.div`
   display: flex;
 `;
 
-const Rect11 = styled.div`
+const Scrollableelement3TitleRectangle = styled.div`
   top: 0px;
   left: 0px;
   width: 256px;
@@ -540,7 +407,7 @@ const Rect11 = styled.div`
   border-radius: 14px;
 `;
 
-const WorkPackage3 = styled.span`
+const Scrollableelement3Title = styled.span`
   font-family: Ubuntu;
   top: 37px;
   left: 17px;
@@ -554,13 +421,13 @@ const WorkPackage3 = styled.span`
   text-align: center;
 `;
 
-const Rect11Stack = styled.div`
+const Scrollableelement3TitleArea = styled.div`
   width: 256px;
   height: 103px;
   position: relative;
 `;
 
-const Start2 = styled.span`
+const Scrollableelement3Date = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -571,7 +438,7 @@ const Start2 = styled.span`
   margin-left: 17px;
 `;
 
-const Rect11StackColumn = styled.div`
+const Scrollableelement3Right = styled.div`
   width: 256px;
   flex-direction: column;
   display: flex;
@@ -579,7 +446,7 @@ const Rect11StackColumn = styled.div`
   margin-bottom: 14px;
 `;
 
-const LoremIpsum4 = styled.span`
+const Scrollableelement3Description = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -589,7 +456,7 @@ const LoremIpsum4 = styled.span`
   margin-left: 24px;
 `;
 
-const Rect11StackColumnRow = styled.div`
+const Scrollableelement3Left = styled.div`
   height: 216px;
   flex-direction: row;
   display: flex;
@@ -598,7 +465,7 @@ const Rect11StackColumnRow = styled.div`
   margin-right: 21px;
 `;
 
-const WorkPackage23Stack = styled.div`
+const Scrollelement3Area = styled.div`
   width: 623px;
   height: 260px;
   margin-top: 48px;
@@ -635,37 +502,5 @@ const ProjectNameColumnRow = styled.div`
   margin-right: 140px;
 `;
 
-const Gantt = styled.span`
-  font-family: Roboto;
-  top: 0px;
-  left: 0px;
-  position: absolute;
-  font-style: normal;
-  font-weight: 400;
-  color: #121212;
-  height: 46px;
-  width: 767px;
-`;
-
-const GanttChart = styled.span`
-  font-family: Ubuntu;
-  top: 0px;
-  left: 54px;
-  position: absolute;
-  font-style: normal;
-  font-weight: 400;
-  color: rgba(255,255,255,1);
-  height: 53px;
-  width: 285px;
-  font-size: 40px;
-`;
-
-const GanttStack = styled.div`
-  width: 767px;
-  height: 53px;
-  margin-top: 45px;
-  margin-left: 55px;
-  position: relative;
-`;
 
 export default Projektansicht;

@@ -12,18 +12,17 @@ import Error from './component/Error';
 import CreateEmployee from './component/CreateEmployee';
 import CreateTeam from './component/CreateTeam';
 import AllUsers from './component/AllUsers';
+import Projektansicht from './component/Projektansicht';
+import EditTeam from './component/EditTeam'
 
 function App() {
   const [isLogged, setIsLogged] = useState(true);
 
   return (
     <div className='App'>
-    <nav className='Navbar'>
-      <Link to="/">Home</Link>
-    </nav>
 
     <Routes>
-      <Route path='/' element={<Login/>}/>
+      <Route path='/' element={<EditTeam/>}/>
       <Route element={<PrivateRoute isLogged={isLogged}/>}>
         <Route path='/dashboard/overview/:userId' element={<Dashboard1/>}/>
         <Route path='/dashboard/projects/:userId' element={<AllProjects/>}/>

@@ -78,7 +78,7 @@ function Login() {
         <div className="form">
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
-                    <label>Username </label>
+                    <label>E-mail </label>
                     <input type="text" name="uname" required />
                     {renderErrorMessage("uname")}
                 </div>

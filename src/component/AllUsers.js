@@ -1,120 +1,155 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import styled, { css } from "styled-components";
 import { useParams, useNavigate } from "react-router-dom";
 
 function AllUsers(props) {
+  // Variablen, die für die Inhalte der Seite verantwortlich sind
+  // Bei Verknüpftem Backend werden die Inhalte durch API Aufrufe gegeben
+  const Message1Name = "Anmeldung";
+  const Message1Email = "Hans.Meier@gmx.de";
+  const Message1Date = "09.05.2022";
+  const Message1Description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seddiam nonumy eirmod tempor invidunt ut labore et dolore magnaaliquyam erat, sed diam voluptua. At vero eos et accusam etjusto duo dolores et ea rebum. Stet clita kasd gubergren, nosea takimata sanctus est Lorem ipsum dolor sit amet.";
+
+  const Message2Name = "Bug";
+  const Message2Email = "Peter.Fritz@Hensoldt.de";
+  const Message2Date = "09.04.2022";
+  const Message2Description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seddiam nonumy eirmod tempor invidunt ut labore et dolore magnaaliquyam erat, sed diam voluptua. At vero eos et accusam etjusto duo dolores et ea rebum.";
+
+  const Message3Name = "Sicherheitslücke";
+  const Message3Email = "Walter.Fritz@Airbus.de";
+  const Message3Date = "01.04.2022";
+  const Message3Description = "Lorem ipsum dolor sit amet.";
+  
+  // Variablen um die eingegebenen Werte in UseStates zu speichern
+  const [EMailAdressCreate, setEMailAdressCreate] = useState("");
+  const [PasswordCreate, setPasswordCreate] = useState("");
+
+  
+  // Funktion zum Weiterverarbeiten der Daten, wenn "Submit" gedrückt wird
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`The values entered are: ${EMailAdressCreate} ${PasswordCreate}`);
+  }
+  
   const navigate = useNavigate()
+  
   return (
+    // JSX Code zur Erzeugung der Page
     <Container>
-      <Rect1>
-        <Button1 onClick={() =>{
-            let link= '/';
-            navigate(link)}}>
-          <ButtonOverlay>
-            <Logout1>Logout</Logout1>
-          </ButtonOverlay>
-        </Button1>
-      </Rect1>
       <Rect2Row>
-        <Rect2>
+        {/* JSX Code zur Erstellung der Tabelle auf der linken Hälfte der Anwendung */}
+        <LightGreyAreaTable>
           <UsersRow>
-            <Users>Users</Users>
-            <Search1 placeholder="    Search"></Search1>
+            <Users>Users:</Users>
           </UsersRow>
-          <Rect4Stack>
-            <Rect4>
-              <UserIdRow>
+          <RectangleStack>
+            <DarkGrayArea>
+            <GreenRectangle>
+              <Comlumns>
                 <UserId>User ID</UserId>
                 <EMail>E - Mail</EMail>
                 <Password>Password</Password>
-              </UserIdRow>
-            </Rect4>
-            <Rect5></Rect5>
-          </Rect4Stack>
-        </Rect2>
+              </Comlumns>
+              </GreenRectangle>
+            </DarkGrayArea>
+          </RectangleStack>
+        </LightGreyAreaTable>
+        
+        
         <Rect6Column>
-          <Rect6>
-            <CreateUser>Create User</CreateUser>
-            <Search2 placeholder="    E - Mail"></Search2>
-            <Search3Row>
-              <Search3 placeholder="    Password"></Search3>
-                <Create>
-                <button>Create</button>
-                </Create>
+          {/* JSX Code zur Erzeugung des Eingabefeldes, mit dem ein neuer Nutzer erstellt werden kann */}
+          <LightGreyAreaCreate>
+          <UsersRow>
+            <CreateUser>Create Employee</CreateUser>
+          </UsersRow>
+          {/* Form erstellt beiden benötigten Eingabefelder + Submit Button */}
+          <form onSubmit={handleSubmit}>
+            <Row1>
+            <input type="text" value={EMailAdressCreate} placeholder="E - Mail Adress" onChange={(e) => setEMailAdressCreate(e.target.value)}/>
+            </Row1>
+
+            <Row2>
+            <input type="text" value={PasswordCreate} placeholder="Password" onChange={(e) => setPasswordCreate(e.target.value)}/>
+            </Row2>
+          <input type="submit" />
+      </form>
+          </LightGreyAreaCreate>
+          
+          <InboxArea>
+            <LightGreyAreaScroll>
+              {/* Scrollable View über die Inbox */}
+              <ScrollArea>
                 
-            </Search3Row>
-          </Rect6>
-          <Rect7Stack>
-            <Rect7>
-              <ScrollArea1>
-                <Rect8>
-                  <Rect9ColumnRow>
-                    <Rect9Column>
-                      <Rect9>
-                        <Request1>Request 1</Request1>
-                      </Rect9>
-                      <Start1>
+                <ScrollelementArea1>
+                  <Scrollelement1Left>
+                    <Scrollelement1Right>
+                      <Scrollelement1TitleArea>
+                        {/* Beschreibung einer Nachricht in der Inbox(äquivalent bei den anderen) */}
+                        <Scrollelement1Title>{Message1Name}</Scrollelement1Title>
+                      </Scrollelement1TitleArea>
+                      <Scrollelement1Data>
                         E - Mail of sender:
-                        <br />
+                        {Message1Email}
                         <br />
                         Date:
-                      </Start1>
-                    </Rect9Column>
-                    <LoremIpsum1>
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                      magna aliquyam erat, sed diam voluptua. At vero eos et
-                      accusam et justo duo dolores et ea rebum. Stet
-                    </LoremIpsum1>
-                  </Rect9ColumnRow>
-                </Rect8>
-                <Rect10>
-                  <WorkPackage2StackColumnRow>
-                    <WorkPackage2StackColumn>
-                      <WorkPackage2Stack>
-                        <WorkPackage2>Work package 1</WorkPackage2>
-                        <Rect11></Rect11>
-                        <Request2>Request 2</Request2>
-                      </WorkPackage2Stack>
-                      <Start4>
+                        {Message1Date}
+                      </Scrollelement1Data>
+                    </Scrollelement1Right>
+                    <Scrollelement1Description>
+                    {Message1Description}
+                    </Scrollelement1Description>
+                  </Scrollelement1Left>
+                </ScrollelementArea1>
+                
+                <ScrollElement2Area>
+                  <Scrollelement2Left>
+                    <Scrollelement2Right>
+                      <Scrollelement2TitleArea>
+                        <Scrollelement2TitleRectangle></Scrollelement2TitleRectangle>
+                        {/* Beschreibung einer Nachricht in der Inbox(äquivalent bei den anderen) */}
+                        <Scrollelement2Title>{Message2Name}</Scrollelement2Title>
+                      </Scrollelement2TitleArea>
+                      <Scrollelement2Data>
                         E - Mail of sender:
-                        <br />
+                        {Message2Email}
                         <br />
                         Date:
-                      </Start4>
-                    </WorkPackage2StackColumn>
-                    <LoremIpsum2>
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                      magna aliquyam erat, sed diam voluptua. At vero eos et
-                      accusam et
-                    </LoremIpsum2>
-                  </WorkPackage2StackColumnRow>
-                </Rect10>
-                <WorkPackage4Stack>
-                  <WorkPackage4>Work package 2</WorkPackage4>
-                  <Rect12></Rect12>
-                  <Rect13>
-                    <Rect14ColumnRow>
-                      <Rect14Column>
+                        {Message2Date}
+                      </Scrollelement2Data>
+                    </Scrollelement2Right>
+                    <Scrollelement2Description>
+                    {Message2Description}
+                    </Scrollelement2Description>
+                  </Scrollelement2Left>
+                </ScrollElement2Area>
+                
+                
+                <Scrollelement3Area>
+                  <Scrollelement3TitleRectangle></Scrollelement3TitleRectangle>
+                  <Scrollelement3TitleArea>
+                    <Scrollelement3Left>
+                      <Scrollelement3Right>
                         <Rect14>
-                          <Request3>Request 3</Request3>
+                          {/* Beschreibung einer Nachricht in der Inbox(äquivalent bei den anderen) */}
+                          <Scrollelement3Title>{Message3Name}</Scrollelement3Title>
                         </Rect14>
-                        <Start5>
+                        <Scrollelement3Data>
                           E - Mail of sender:
-                          <br />
+                          {Message3Email}
                           <br />
                           Date:
-                        </Start5>
-                      </Rect14Column>
-                      <Hello>Hello</Hello>
-                    </Rect14ColumnRow>
-                  </Rect13>
-                </WorkPackage4Stack>
-              </ScrollArea1>
-            </Rect7>
+                          {Message3Date}
+                        </Scrollelement3Data>
+                      </Scrollelement3Right>
+                      <Scrollelement3Description>{Message3Description}</Scrollelement3Description>
+                    </Scrollelement3Left>
+                  </Scrollelement3TitleArea>
+                </Scrollelement3Area>
+              
+              </ScrollArea>
+            </LightGreyAreaScroll>
             <Inbox>Inbox</Inbox>
-          </Rect7Stack>
+          </InboxArea>
         </Rect6Column>
       </Rect2Row>
     </Container>
@@ -129,46 +164,7 @@ const Container = styled.div`
   width: 100vw;
 `;
 
-const ButtonOverlay = styled.button`
- display: block;
- background: none;
- height: 100%;
- width: 100%;
- border:none
- `;
-const Rect1 = styled.div`
-  height: 98px;
-  background-color: rgba(1,210,142,1);
-  flex-direction: column;
-  display: flex;
-`;
-
-const Button1 = styled.div`
-  width: 207px;
-  height: 70px;
-  background-color: rgba(255,254,254,0.42);
-  border-radius: 14px;
-  flex-direction: column;
-  display: flex;
-  margin-top: 16px;
-  margin-left: 1695px;
-  border: none;
-`;
-
-const Logout1 = styled.span`
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: 400;
-  color: rgba(255,255,255,1);
-  height: 37px;
-  width: 197px;
-  font-size: 30px;
-  text-align: center;
-  margin-top: 17px;
-  margin-left: 5px;
-`;
-
-const Rect2 = styled.div`
+const LightGreyAreaTable = styled.div`
   width: 765px;
   height: 845px;
   background-color: rgba(74,74,74,1);
@@ -186,21 +182,6 @@ const Users = styled.span`
   text-align: center;
 `;
 
-const Search1 = styled.input`
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: 400;
-  color: #121212;
-  height: 63px;
-  width: 305px;
-  background-color: rgba(230, 230, 230,0.32);
-  border-radius: 24px;
-  font-size: 25px;
-  margin-left: 212px;
-  border: none;
-  background: transparent;
-`;
-
 const UsersRow = styled.div`
   height: 63px;
   flex-direction: row;
@@ -210,7 +191,7 @@ const UsersRow = styled.div`
   margin-right: 46px;
 `;
 
-const Rect4 = styled.div`
+const DarkGrayArea = styled.div`
   top: 0px;
   left: 3px;
   width: 646px;
@@ -254,7 +235,7 @@ const Password = styled.span`
   margin-left: 117px;
 `;
 
-const UserIdRow = styled.div`
+const Comlumns = styled.div`
   height: 57px;
   flex-direction: row;
   display: flex;
@@ -264,7 +245,7 @@ const UserIdRow = styled.div`
   margin-top: 13px;
 `;
 
-const Rect5 = styled.div`
+const GreenRectangle = styled.div`
   top: 0px;
   left: 0px;
   width: 648px;
@@ -275,7 +256,7 @@ const Rect5 = styled.div`
   opacity: 0.74;
 `;
 
-const Rect4Stack = styled.div`
+const RectangleStack = styled.div`
   width: 649px;
   height: 664px;
   margin-top: 25px;
@@ -283,7 +264,7 @@ const Rect4Stack = styled.div`
   position: relative;
 `;
 
-const Rect6 = styled.div`
+const LightGreyAreaCreate = styled.div`
   width: 793px;
   height: 340px;
   background-color: rgba(74,74,74,1);
@@ -302,58 +283,10 @@ const CreateUser = styled.span`
   width: 251px;
   font-size: 30px;
   text-align: center;
-  margin-top: 43px;
+  margin-top: 15px;
 `;
 
-const Search2 = styled.input`
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: 400;
-  color: #121212;
-  height: 63px;
-  width: 388px;
-  background-color: rgba(230, 230, 230,0.32);
-  border-radius: 24px;
-  font-size: 25px;
-  margin-top: 19px;
-  margin-left: 39px;
-  border: none;
-  background: transparent;
-`;
-
-const Search3 = styled.input`
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: 400;
-  color: #121212;
-  height: 63px;
-  width: 388px;
-  background-color: rgba(230, 230, 230,0.32);
-  border-radius: 24px;
-  font-size: 25px;
-  border: none;
-  background: transparent;
-`;
-
-const Button2 = styled.div`
-  width: 174px;
-  height: 80px;
-  background-color: #E6E6E6;
-  margin-left: 100px;
-  margin-top: 11px;
-  border: none;
-`;
-
-const Search3Row = styled.div`
-  height: 91px;
-  flex-direction: row;
-  display: flex;
-  margin-top: 40px;
-  margin-left: 39px;
-  margin-right: 91px;
-`;
-
-const Rect7 = styled.div`
+const LightGreyAreaScroll = styled.div`
   top: 0px;
   left: 33px;
   width: 793px;
@@ -365,7 +298,7 @@ const Rect7 = styled.div`
   display: flex;
 `;
 
-const ScrollArea1 = styled.div`
+const ScrollArea = styled.div`
   overflow-y: scroll;
   width: 728px;
   height: 349px;
@@ -377,7 +310,7 @@ const ScrollArea1 = styled.div`
   margin-left: 39px;
 `;
 
-const Rect8 = styled.div`
+const ScrollelementArea1 = styled.div`
   width: 623px;
   height: 199px;
   background-color: rgba(74,74,74,1);
@@ -389,7 +322,7 @@ const Rect8 = styled.div`
   flex: 0 0 auto;
 `;
 
-const Rect9 = styled.div`
+const Scrollelement1TitleArea = styled.div`
   width: 256px;
   height: 78px;
   background-color: rgba(124,124,124,1);
@@ -398,7 +331,7 @@ const Rect9 = styled.div`
   display: flex;
 `;
 
-const Request1 = styled.span`
+const Scrollelement1Title = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -411,7 +344,7 @@ const Request1 = styled.span`
   margin-left: 16px;
 `;
 
-const Start1 = styled.span`
+const Scrollelement1Data = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -422,14 +355,14 @@ const Start1 = styled.span`
   margin-left: 16px;
 `;
 
-const Rect9Column = styled.div`
+const Scrollelement1Right = styled.div`
   width: 256px;
   flex-direction: column;
   display: flex;
   margin-bottom: 11px;
 `;
 
-const LoremIpsum1 = styled.span`
+const Scrollelement1Description = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -439,7 +372,7 @@ const LoremIpsum1 = styled.span`
   margin-left: 24px;
 `;
 
-const Rect9ColumnRow = styled.div`
+const Scrollelement1Left = styled.div`
   height: 166px;
   flex-direction: row;
   display: flex;
@@ -448,7 +381,7 @@ const Rect9ColumnRow = styled.div`
   margin-right: 20px;
 `;
 
-const Rect10 = styled.div`
+const ScrollElement2Area = styled.div`
   width: 623px;
   height: 207px;
   background-color: rgba(74,74,74,1);
@@ -460,21 +393,7 @@ const Rect10 = styled.div`
   flex: 0 0 auto;
 `;
 
-const WorkPackage2 = styled.span`
-  font-family: Ubuntu;
-  top: 29px;
-  left: 16px;
-  position: absolute;
-  font-style: normal;
-  font-weight: 400;
-  color: rgba(255,255,255,1);
-  height: 52px;
-  width: 223px;
-  font-size: 25px;
-  text-align: center;
-`;
-
-const Rect11 = styled.div`
+const Scrollelement2TitleRectangle = styled.div`
   top: 0px;
   left: 0px;
   width: 256px;
@@ -484,7 +403,7 @@ const Rect11 = styled.div`
   border-radius: 14px;
 `;
 
-const Request2 = styled.span`
+const Scrollelement2Title = styled.span`
   font-family: Ubuntu;
   top: 30px;
   left: 16px;
@@ -498,13 +417,13 @@ const Request2 = styled.span`
   text-align: center;
 `;
 
-const WorkPackage2Stack = styled.div`
+const Scrollelement2TitleArea = styled.div`
   width: 256px;
   height: 82px;
   position: relative;
 `;
 
-const Start4 = styled.span`
+const Scrollelement2Data = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -515,14 +434,14 @@ const Start4 = styled.span`
   margin-left: 16px;
 `;
 
-const WorkPackage2StackColumn = styled.div`
+const Scrollelement2Right = styled.div`
   width: 256px;
   flex-direction: column;
   display: flex;
   margin-bottom: 14px;
 `;
 
-const LoremIpsum2 = styled.span`
+const Scrollelement2Description = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -532,7 +451,7 @@ const LoremIpsum2 = styled.span`
   margin-left: 24px;
 `;
 
-const WorkPackage2StackColumnRow = styled.div`
+const Scrollelement2Left = styled.div`
   height: 172px;
   flex-direction: row;
   display: flex;
@@ -541,21 +460,7 @@ const WorkPackage2StackColumnRow = styled.div`
   margin-right: 20px;
 `;
 
-const WorkPackage4 = styled.span`
-  font-family: Ubuntu;
-  top: 53px;
-  left: 48px;
-  position: absolute;
-  font-style: normal;
-  font-weight: 400;
-  color: rgba(255,255,255,1);
-  height: 54px;
-  width: 223px;
-  font-size: 25px;
-  text-align: center;
-`;
-
-const Rect12 = styled.div`
+const Scrollelement3TitleRectangle = styled.div`
   top: 23px;
   left: 32px;
   width: 256px;
@@ -565,7 +470,7 @@ const Rect12 = styled.div`
   border-radius: 14px;
 `;
 
-const Rect13 = styled.div`
+const Scrollelement3TitleArea = styled.div`
   top: 0px;
   left: 0px;
   width: 623px;
@@ -586,7 +491,7 @@ const Rect14 = styled.div`
   display: flex;
 `;
 
-const Request3 = styled.span`
+const Scrollelement3Title = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -599,7 +504,7 @@ const Request3 = styled.span`
   margin-left: 16px;
 `;
 
-const Start5 = styled.span`
+const Scrollelement3Data = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -610,7 +515,7 @@ const Start5 = styled.span`
   margin-left: 16px;
 `;
 
-const Rect14Column = styled.div`
+const Scrollelement3Right = styled.div`
   width: 256px;
   flex-direction: column;
   display: flex;
@@ -618,7 +523,7 @@ const Rect14Column = styled.div`
   margin-bottom: 12px;
 `;
 
-const Hello = styled.span`
+const Scrollelement3Description = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -628,7 +533,7 @@ const Hello = styled.span`
   margin-left: 24px;
 `;
 
-const Rect14ColumnRow = styled.div`
+const Scrollelement3Left = styled.div`
   height: 177px;
   flex-direction: row;
   display: flex;
@@ -637,7 +542,7 @@ const Rect14ColumnRow = styled.div`
   margin-right: 20px;
 `;
 
-const WorkPackage4Stack = styled.div`
+const Scrollelement3Area = styled.div`
   width: 623px;
   height: 214px;
   margin-top: 27px;
@@ -662,7 +567,7 @@ const Inbox = styled.span`
   text-align: center;
 `;
 
-const Rect7Stack = styled.div`
+const InboxArea = styled.div`
   width: 826px;
   height: 464px;
   margin-top: 41px;
@@ -685,17 +590,22 @@ const Rect2Row = styled.div`
   margin-right: 134px;
 `;
 
-const Create = styled.span`
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: 400;
-  color: rgba(255,255,255,1);
-  height: 37px;
-  width: 197px;
-  font-size: 30px;
-  text-align: center;
-  margin-top: 50px;
-  margin-left: 200px;
+const Row1 = styled.div`
+  height: 54px;
+  flex-direction: row;
+  display: flex;
+  margin-top: auto;
+  margin-left: -275px;
+  margin-right: auto;
+`;
+
+const Row2 = styled.div`
+  height: 54px;
+  flex-direction: row;
+  display: flex;
+  margin-top: auto;
+  margin-left: -275px;
+  margin-right: auto;
 `;
 
 export default AllUsers;

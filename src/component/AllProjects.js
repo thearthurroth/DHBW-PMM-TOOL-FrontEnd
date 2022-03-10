@@ -6,38 +6,34 @@ function AllProjects(props) {
   let { userId } = useParams()
   const navigate = useNavigate()
   return (
+    // JSX Code zum Erstellen der Seite
     <Container>
-      <Rect1>
-        <Button1 onClick={() =>{
-            let link= '/';
-            navigate(link)}}>
-          <ButtonOverlay>
-            <Logout1>Logout</Logout1>
-          </ButtonOverlay>
-        </Button1>
-      </Rect1>
-      <Rect2>
+
+      <LightGreyArea>
         <ProjectsRow>
-          <Projects>Projects of + {userId}</Projects>
-          <Search1 placeholder="    Search"></Search1>
+          <Projects>Projects of {userId}: </Projects>
         </ProjectsRow>
-        <Rect4Stack>
-          <Rect4>
-            <ProjectIdRow>
+        <DarkGreyArea>
+          <ReactanglesStack>
+            {/* Grünes Rechteck, das Spaltennamen beinhaltet */}
+          <GreenRectangle>
+          <ProjectIdRow>
               <ProjectId>Project ID</ProjectId>
               <Title>Title</Title>
               <Progress>Progress</Progress>
               <Team>Team</Team>
-              <Password>Amount of work packages</Password>
+              <WorkPackages>Amount of work packages</WorkPackages>
             </ProjectIdRow>
-          </Rect4>
-          <Rect5></Rect5>
-        </Rect4Stack>
-      </Rect2>
+          </GreenRectangle>
+          </ReactanglesStack>
+
+        </DarkGreyArea>
+      </LightGreyArea>
     </Container>
   );
 }
 
+//Styles der jeweiligen Komponenten
 const Container = styled.div`
   display: flex;
   background-color: rgba(38,38,38,1);
@@ -85,7 +81,7 @@ const Logout1 = styled.span`
   margin-left: 5px;
 `;
 
-const Rect2 = styled.div`
+const LightGreyArea = styled.div`
   width: 1765px;
   height: 845px;
   background-color: rgba(74,74,74,1);
@@ -101,7 +97,7 @@ const Projects = styled.span`
   font-style: normal;
   font-weight: 400;
   color: rgba(255,255,255,1);
-  font-size: 50px;
+  font-size: 30px;
   text-align: center;
 `;
 
@@ -129,7 +125,7 @@ const ProjectsRow = styled.div`
   margin-right: 79px;
 `;
 
-const Rect4 = styled.div`
+const ReactanglesStack = styled.div`
   top: 0px;
   left: 3px;
   width: 1631px;
@@ -184,7 +180,7 @@ const Team = styled.span`
   margin-left: 247px;
 `;
 
-const Password = styled.span`
+const WorkPackages = styled.span`
   font-family: Ubuntu;
   font-style: normal;
   font-weight: 400;
@@ -205,7 +201,7 @@ const ProjectIdRow = styled.div`
   margin-top: 14px;
 `;
 
-const Rect5 = styled.div`
+const GreenRectangle = styled.div`
   top: 0px;
   left: 0px;
   width: 1634px;
@@ -216,7 +212,7 @@ const Rect5 = styled.div`
   opacity: 0.74;
 `;
 
-const Rect4Stack = styled.div`
+const DarkGreyArea = styled.div`
   width: 1634px;
   height: 664px;
   margin-top: 25px;

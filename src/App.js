@@ -24,7 +24,7 @@ function App() {
     <div className='App'>
 
     <Routes>
-      <Route path='/' element={<CreateEmployee/>}/>
+      <Route path='/' element={<Login/>}/>
       <Route element={<PrivateRoute isLogged={isLogged}/>}>
         <Route path='/dashboard/overview/:userId' element={<Dashboard1/>}/>
         <Route path='/dashboard/projects/:userId' element={<AllProjects/>}/>

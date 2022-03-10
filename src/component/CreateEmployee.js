@@ -19,7 +19,7 @@ function CreateEmployees(props) {
   }
   
   return (
-    // JSX Code zum Erstellend der Seite
+    // JSX Code zum Erstellen der Seite
     <Container>
       <GreyArea>
         <Title>Create employee</Title>

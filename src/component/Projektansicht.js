@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 
 function Projektansicht(props) {
   // Variablen, die für die Inhalte der Seite verantwortlich sind

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import { useState } from "react";
 import ReactDOM from 'react-dom';
 
@@ -25,20 +25,20 @@ function EditEmployees(props) {
         <Title>Edit employee</Title>
         {/* Erstellen der für die Eingabe benötigter Textboxen */}
         <form onSubmit={handleSubmit}>
-            <Row1>
+            <Row>
             <input type="text" value={FirstName} placeholder="First Name" onChange={(e) => setFirstName(e.target.value)}/>
             <input type="text" value={LastName} placeholder="Last Name" onChange={(e) => setLastName(e.target.value)}/>
-            </Row1>
+            </Row>
 
-            <Row2>
+            <Row>
             <input type="text" value={EmployeeID} placeholder="Employee ID" onChange={(e) => setEmployeeID(e.target.value)}/>
             <input type="text" value={Responsibility} placeholder="Responsibility in the Team" onChange={(e) => setResponsibility(e.target.value)}/>
-            </Row2>
+            </Row>
 
-            <Row3>
+            <Row>
             <input type="text" value={WorkingHours} placeholder="Working hours/week" onChange={(e) => setWorkingHours(e.target.value)}/>
             <input type="text" value={Teams} placeholder="Team(s)" onChange={(e) => setTeams(e.target.value)}/>
-            </Row3>
+            </Row>
           <input type="submit" />
       </form>
       </GreyArea>
@@ -81,30 +81,11 @@ const Title = styled.span`
   margin-left: 300px;
 `;
 
-const Row1 = styled.div`
+const Row = styled.div`
   height: 54px;
   flex-direction: row;
   display: flex;
   margin-top: 65px;
-  margin-left: 54px;
-  margin-right: 88px;
-`;
-
-const Row2 = styled.div`
-  height: 54px;
-  flex-direction: row;
-  display: flex;
-  margin-top: 61px;
-  margin-left: 54px;
-  margin-right: 88px;
-`;
-
-
-const Row3 = styled.div`
-  height: 54px;
-  flex-direction: row;
-  display: flex;
-  margin-top: 55px;
   margin-left: 54px;
   margin-right: 88px;
 `;

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import { useParams, useNavigate } from "react-router-dom";
 
 function AllProjects(props) {
@@ -8,11 +8,12 @@ function AllProjects(props) {
   return (
     // JSX Code zum Erstellen der Seite
     <Container>
-
       <LightGreyArea>
+
         <ProjectsRow>
           <Projects>Projects of {userId}: </Projects>
         </ProjectsRow>
+
         <DarkGreyArea>
           <ReactanglesStack>
             {/* Grünes Rechteck, das Spaltennamen beinhaltet */}
@@ -26,8 +27,8 @@ function AllProjects(props) {
             </ProjectIdRow>
           </GreenRectangle>
           </ReactanglesStack>
-
         </DarkGreyArea>
+
       </LightGreyArea>
     </Container>
   );
@@ -49,37 +50,6 @@ const ButtonOverlay = styled.button`
  width: 100%;
  border:none
  `;
-const Rect1 = styled.div`
-  height: 98px;
-  background-color: rgba(1,210,142,1);
-  flex-direction: column;
-  display: flex;
-`;
-
-const Button1 = styled.div`
-  width: 207px;
-  height: 70px;
-  background-color: rgba(255,254,254,0.42);
-  border-radius: 14px;
-  flex-direction: column;
-  display: flex;
-  margin-top: 16px;
-  margin-left: 1695px;
-  border: none;
-`;
-
-const Logout1 = styled.span`
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: 400;
-  color: rgba(255,255,255,1);
-  height: 37px;
-  width: 197px;
-  font-size: 30px;
-  text-align: center;
-  margin-top: 17px;
-  margin-left: 5px;
-`;
 
 const LightGreyArea = styled.div`
   width: 1765px;
@@ -99,21 +69,6 @@ const Projects = styled.span`
   color: rgba(255,255,255,1);
   font-size: 30px;
   text-align: center;
-`;
-
-const Search1 = styled.input`
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: 400;
-  color: #121212;
-  height: 63px;
-  width: 305px;
-  background-color: rgba(230, 230, 230,0.32);
-  border-radius: 24px;
-  font-size: 25px;
-  margin-left: 1121px;
-  border: none;
-  background: transparent;
 `;
 
 const ProjectsRow = styled.div`

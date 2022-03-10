@@ -78,13 +78,11 @@ function Login() {
         <div className="form">
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
-                    <label>E-mail </label>
-                    <input type="text" name="uname" required />
+                    <input type="text" name="uname" placeholder="E-mail" required />
                     {renderErrorMessage("uname")}
                 </div>
                 <div className="input-container">
-                    <label>Password </label>
-                    <input type="password" name="pass" required />
+                    <input type="password" name="pass" placeholder="Password" required />
                     {renderErrorMessage("pass")}
                 </div>
                 <div className="button-container">

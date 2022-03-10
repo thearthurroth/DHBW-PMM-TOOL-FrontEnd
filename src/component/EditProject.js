@@ -1,27 +1,48 @@
-import React from "react";
+import {React, useState} from "react";
 import styled from "styled-components";
 
 function EditProject(props) {
+  // Variablen, die für die Inhalte der Seite verantwortlich sind
+  // Bei Verknüpftem Backend werden die Inhalte durch API Aufrufe gegeben
+  const ProjectDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seddiam nonumy eirmod tempor invidunt ut labore et dolore magnaaliquyam erat, sed diam voluptua. At vero eos et accusam etjusto duo dolores et ea rebum. Stet clita kasd gubergren, no seatakimata sanctus est Lorem ipsum dolor sit amet.";
+  
+  const Workpackage1name = "Documentation";
+  const Workpackage1start = "09.03.2022";
+  const Workpackage1end = "09.05.2022";
+  const Workpackage1description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seddiam nonumy eirmod tempor invidunt ut labore et dolore magnaaliquyam erat, sed diam voluptua. At vero eos et accusam etjusto duo dolores et ea rebum. Stet clita kasd gubergren, nosea takimata sanctus est Lorem ipsum dolor sit amet.";
+
+  const Workpackage2name = "Implementation";
+  const Workpackage2start = "15.04.2022";
+  const Workpackage2end = "03.07.2022";
+  const Workpackage2description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seddiam nonumy eirmod tempor invidunt ut labore et dolore magnaaliquyam erat, sed diam voluptua. At vero eos et accusam etjusto duo dolores et ea rebum. Stet clita kasd guberg.";
+   
+  // Variablen um die eingegebenen Werte in UseStates zu speichern
+  const [AssignedTeams, setAssignedTeams] = useState("");
+
+  // Funktion zum Weiterverarbeiten der Daten, wenn "Submit" gedrückt wird
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`The values entered are: ${AssignedTeams} `);
+  }
+
   return (
     // JSX Code zum Erstellen der Seite
     <Container>
       <Background>
 
+        {/* Beschreibung und Titel des jeweiligen Projektes */}
         <ContainerOfProject>
           <ProjectName>Project name</ProjectName>
           <DarkGreyAreaOfProject>
             <ScrollAreaOfProject>
               <AboutofProject>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet.
+                {ProjectDescription}
               </AboutofProject>
             </ScrollAreaOfProject>
           </DarkGreyAreaOfProject>
         </ContainerOfProject>
 
+        {/* Arbeitspakete in der Scrollarea */}
         <ContainerOfWorkPackageS>
           <BoxOfWorkPackageS>
             <WorkPackages>Work packages</WorkPackages>
@@ -31,20 +52,19 @@ function EditProject(props) {
                 <PackageColumnRow>
                   <PackageColumn>
                     <TitleOfWorkPackage>
-                      <WorkPackage>Work package 1</WorkPackage>
+                      <WorkPackage>{Workpackage1name}</WorkPackage>
                     </TitleOfWorkPackage>
                     <DateofWorkPack>
                       Start Date:
+                      {Workpackage1start}
                       <br/>
                       <br/>
                       End Date:
+                      {Workpackage1end}
                     </DateofWorkPack>
                   </PackageColumn>
                   <AboutOfWorkPack>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                    justo duo
+                  {Workpackage1description}
                   </AboutOfWorkPack>
                 </PackageColumnRow>
               </ContainerOfWorkPackage>
@@ -53,24 +73,19 @@ function EditProject(props) {
                 <PackageColumnRow>
                   <PackageColumn>
                     <TitleOfWorkPackage>
-                      <WorkPackage>Work package 2</WorkPackage>
+                      <WorkPackage>{Workpackage2name}</WorkPackage>
                     </TitleOfWorkPackage>
                     <DateofWorkPack>
                       Start Date:
+                      {Workpackage2start}
                       <br/>
                       <br/>
                       End Date:
+                      {Workpackage2end}
                     </DateofWorkPack>
                   </PackageColumn>
                   <AboutOfWorkPack>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                    justo duoeirmod tempor invidunt ut labore et dolore magna
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                    justo duoeirmod tempor invidunt ut labore et dolore magna
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                    justo duo.
+                  {Workpackage2description}
                   </AboutOfWorkPack>
                 </PackageColumnRow>
               </ContainerOfWorkPackage>
@@ -78,27 +93,23 @@ function EditProject(props) {
             </ScrollAreaOfWorkPack>
           </BoxOfWorkPackageS>
 
+          {/* Textbox, die die Teams, die zugeorfnet sind, festlegt */}
           <ContainerofAssignedTeam>
             <AssignedTeamRow>
-              <AssignedTeam>Assigned Team</AssignedTeam>
-              <Search placeholder="    Team ID"></Search>
+              <AssignedTeam>Assigned Teams</AssignedTeam>
+
+              <form onSubmit={handleSubmit}>
+                <Row>
+                <input type="text" value={AssignedTeams} placeholder="" onChange={(e) => setAssignedTeams(e.target.value)}/>
+                <input type="submit" />
+                </Row>
+              </form>
+
             </AssignedTeamRow>
           </ContainerofAssignedTeam>
 
-          <Save>
-            <button>Save</button>
-          </Save>
-
         </ContainerOfWorkPackageS>
       </Background>
-
-      <OverLay>
-        <ButtonOfLogout>
-          <ButtonOverlay>
-            <Logout>Logout</Logout>
-          </ButtonOverlay>
-        </ButtonOfLogout>
-      </OverLay>
 
     </Container>
   );
@@ -113,16 +124,9 @@ const Container = styled.div`
   width: 100vw;
 `;
 
-const ButtonOverlay = styled.button`
- display: block;
- background: none;
- height: 100%;
- width: 100%;
- border:none
- `;
 const ContainerOfProject = styled.div`
   width: 765px;
-  height: 845px;
+  height: 750px;
   background-color: rgba(74,74,74,1);
   border-radius: 21px;
   flex-direction: column;
@@ -137,12 +141,12 @@ const ProjectName = styled.span`
   font-size: 50px;
   text-align: center;
   margin-top: 44px;
-  margin-left: 75px;
+  margin-left: 0px;
 `;
 
 const DarkGreyAreaOfProject = styled.div`
   width: 646px;
-  height: 664px;
+  height: 600px;
   background-color: rgba(38,38,38,1);
   border-radius: 14px;
   flex-direction: column;
@@ -153,8 +157,8 @@ const DarkGreyAreaOfProject = styled.div`
 
 const ScrollAreaOfProject = styled.div`
   overflow-y: scroll;
-  width: 586px;
-  height: 642px;
+  width: 600px;
+  height: 600px;
   background-color: rgba(38,38,38,1);
   flex-direction: column;
   display: flex;
@@ -194,7 +198,7 @@ const WorkPackages = styled.span`
   font-size: 40px;
   text-align: center;
   margin-top: 32px;
-  margin-left: 272px;
+  margin-left: 0px;
 `;
 
 const ScrollAreaOfWorkPack = styled.div`
@@ -297,22 +301,8 @@ const AssignedTeam = styled.span`
   color: rgba(255,255,255,1);
   font-size: 25px;
   text-align: center;
-  margin-top: 10px;
-`;
-
-const Search = styled.input`
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: 400;
-  color: #121212;
-  height: 54px;
-  width: 425px;
-  background-color: rgba(230, 230, 230,0.32);
-  border-radius: 24px;
-  font-size: 25px;
-  margin-left: 75px;
-  border: none;
-  background: transparent;
+  margin-left: -40px;
+  margin-top: 0px;
 `;
 
 const AssignedTeamRow = styled.div`
@@ -341,50 +331,13 @@ const Background = styled.div`
   margin-right: 140px;
 `;
 
-const OverLay = styled.div`
-  height: 98px;
-  background-color: rgba(1,210,142,1);
-  flex-direction: column;
+const Row = styled.div`
+  height: 90px;
+  flex-direction: row;
   display: flex;
-  margin-top: -1024px;
-`;
-
-const ButtonOfLogout = styled.div`
-  width: 207px;
-  height: 70px;
-  background-color: rgba(255,254,254,0.42);
-  border-radius: 14px;
-  flex-direction: column;
-  display: flex;
-  margin-top: 16px;
-  margin-left: 1695px;
-  border: none;
-`;
-
-const Logout = styled.span`
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: 400;
-  color: rgba(255,255,255,1);
-  height: 37px;
-  width: 197px;
-  font-size: 30px;
-  text-align: center;
-  margin-top: 17px;
-  margin-left: 5px;
-`;
-
-const Save = styled.span`
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: 400;
-  color: rgba(255,255,255,1);
-  height: 37px;
-  width: 197px;
-  font-size: 30px;
-  text-align: center;
-  margin-top: 50px;
-  margin-left: 675px;
+  margin-top: -21px ;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export default EditProject;

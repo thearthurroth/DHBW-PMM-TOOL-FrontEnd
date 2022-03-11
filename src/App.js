@@ -1,6 +1,6 @@
 
 import { Link, Route, Routes, useParams } from 'react-router-dom';
-import './App.css';
+
 import React, { useEffect, useState } from 'react';
 import PrivateRoute from './component/PrivateRoute';
 import Login from './component/Login';
@@ -16,6 +16,9 @@ import Projektansicht from './component/Projektansicht';
 import EditTeam from './component/EditTeam'
 import EditProject from './component/EditProject';
 import EditEmployees from './component/EditEmployees';
+import Sidebar from './component/Sidebar.jsx'
+import "./scss/style.scss";
+import Dashboard from './component/Dashboard'
 
 
 function App() {
@@ -23,11 +26,11 @@ function App() {
 
   return (
     <div className='App'>
-
+      <Sidebar/>
     <Routes>
       <Route path='/' element={<Login/>}/>
       <Route element={<PrivateRoute isLogged={isLogged}/>}>
-        <Route path='/dashboard/overview/:userId' element={<Dashboard1/>}/>
+        <Route path='/dashboard/overview/:userId' element={<Dashboard/>}/>
         <Route path='/dashboard/projects/:userId' element={<AllProjects/>}/>
         <Route path='/dashboard/teams/:userId' element={<AllTeams/>}/>
         <Route path='/dashboard/mitarbeiter/:userId' element={<AllEmployees/>}/>

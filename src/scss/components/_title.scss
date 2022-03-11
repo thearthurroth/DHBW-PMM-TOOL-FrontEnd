@@ -1,0 +1,7 @@
+@mixin getTitleStyles() {
+    .title__container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+}

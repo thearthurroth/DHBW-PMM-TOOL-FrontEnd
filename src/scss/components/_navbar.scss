@@ -1,0 +1,16 @@
+@mixin getNavbarStyles {
+    .navbar {
+        margin-top: 54px;
+        display: flex;
+        justify-content: space-between;
+        .container {
+            display: flex;
+
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            }
+        
+    }
+}

@@ -1,96 +1,19 @@
-input[type="text"] {
-  font-family: Ubuntu;
-  color: black;
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  background: #d8f5eb;
-  opacity: 50%;
-  padding: 10px 20px;
-  border-radius: 1ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-input[type="password"] {
-  font-family: Ubuntu;
-  color: black;
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  background: #d8f5eb;
-  opacity: 50%;
-  padding: 10px 20px;
-  border-radius: 1ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-input[type="submit"] {
-  font-family: Ubuntu;
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  background: #01d28e;
-  border: 1px solid #01d28e;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 1ch;
-  margin-top: 50px;
-  margin-left: 120px;
-}
-
-button[type="submit"] {
-  font-family: Ubuntu;
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  background: #01d28e;
-  border: 1px solid #01d28e;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 1ch;
-  margin-top: auto;
-  margin-left: auto;
-}
-
-input[type="submit"]:hover {
-  background: #6cf0c2;
-}
-
-.button-container {
-  display: flex;
+.Login {
+  display:flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  align-items: center;
   justify-content: center;
-}
-
-.login-form {
-  width: 20%;
-  background-color: whitesmoke;
-  padding: 2rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 2ch;
-}
-
-.list-container {
-  display: flex;
-}
-
-.error {
-  color: red;
-  font-size: 12px;
-}
-
-.title {
-  font-size: 25px;
-  padding-left: 10px;
-  margin-bottom: 20px;
-  font-weight: bolder;
-}
-
-.input-container {
-  display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin: 10px;
-  border-color: rgba(1, 210, 142, 0);
+  gap: 0px;
+  height: 100vh;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  background-color: #2E2E33;
 }

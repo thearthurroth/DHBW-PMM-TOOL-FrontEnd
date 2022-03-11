@@ -13,7 +13,7 @@ export default function ProjectsCard() {
     <div className='projectscard'>
         <Title title={"Projects"} subTitle={"Übersicht"}/>
         <div className="table">
-          <Table striped bordered hover variant="dark">
+          <Table>
             <thead>
             <tr>
             <th>#</th>
@@ -29,7 +29,9 @@ export default function ProjectsCard() {
           </Table>
         </div>
         <div className='dashboard-button'>
-        <button className='dButton'>Projekt erstellen</button>
+        <button className='dButton' onClick={() =>{
+            let link= '/dashboard/projects/erstellen/:userId';
+            navigate(link)}}>Projekt erstellen</button>
         <button className='dButton' onClick={() =>{
             let link= '/dashboard/projects/:userId';
             navigate(link)}}>Projekte verwalten</button>

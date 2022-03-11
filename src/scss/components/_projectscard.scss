@@ -10,8 +10,8 @@
         
 
         .dashboard-button {
-            position: absolute;
-            margin-top: 385px;
+            display: flex;
+            margin-top: 530px;
             
             .dButton {
                 display: inline-block;
@@ -23,6 +23,7 @@
                 background-color: rgb(15, 15, 15);
                 color: rgb(112, 112, 112);
                 margin-inline: 1rem;
+                
         
             }
         }

@@ -1,0 +1,25 @@
+.NavBarTop {
+    background-color: rgb(25, 214, 151);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    margin: 0px;
+    border: 0;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+}
+
+.topnav__right {
+    display: flex;
+    align-items: center;
+}
+
+.NavBtn {
+    border: 0;
+    color: rgb(192, 192, 192);
+    background-color: rgb(65, 65, 65);
+    padding: 7px;
+    border-radius: 7px;
+}

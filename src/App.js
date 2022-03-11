@@ -14,6 +14,8 @@ import AllUsers from './component/AllUsers';
 import "./scss/style.scss";
 import Dashboard from './component/Dashboard'
 import NavBar from './component/Assets/NavBar';
+import CreateProject from './component/CreateProject';
+import EditProject from './component/EditProject';
 
 
 
@@ -28,6 +30,7 @@ function App() {
       <Route element={<PrivateRoute isLogged={isLogged}/>}>
         <Route path='/dashboard/overview/:userId' element={<Dashboard/>}/>
         <Route path='/dashboard/projects/:userId' element={<AllProjects/>}/>
+        <Route path='/dashboard/project/erstellen/:userId' element={<CreateProject/>}/>
         <Route path='/dashboard/teams/:userId' element={<AllTeams/>}/>
         <Route path='/dashboard/mitarbeiter/:userId' element={<AllEmployees/>}/>
         <Route path='/dashboard/mitarbeiter/erstellen/:userId' element={<CreateEmployee/>}/>

@@ -30,7 +30,7 @@ export default function ProjectsCard() {
         </div>
         <div className='dashboard-button'>
         <button className='dButton' onClick={() =>{
-            let link= '/dashboard/projects/erstellen/:userId';
+            let link= '/dashboard/project/erstellen/:userId';
             navigate(link)}}>Projekt erstellen</button>
         <button className='dButton' onClick={() =>{
             let link= '/dashboard/projects/:userId';
